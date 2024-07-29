@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:islami_app_flutter/Theme/my_theme_data.dart';
 import 'package:islami_app_flutter/home/home.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: MyThemeData.lightMode,
       initialRoute: HomeScreen.rotueName,
 
       routes: {
