@@ -7,7 +7,7 @@ import 'package:islami_app_flutter/home/Tabs/sebha_tabs/sebha_tab.dart';
 import 'package:islami_app_flutter/utils/image_path.dart';
 
 class HomeScreen extends StatefulWidget {
-  static const String rotueName = '/HomeScreen';
+  static const String rotueName = '/';
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

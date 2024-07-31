@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 class MyThemeData {
   /// Light mode, Dark mode, Colors.
   static final ThemeData lightMode = ThemeData(
-    appBarTheme: const AppBarTheme(
-      titleTextStyle: TextStyle(
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        titleTextStyle: TextStyle(
         color: Colors.black,
         fontSize: 30,
         fontWeight: FontWeight.w700,
-      ),
+        ),
       centerTitle: true,
     ),
     scaffoldBackgroundColor: Colors.transparent,
@@ -26,5 +27,5 @@ class MyThemeData {
       showSelectedLabels: true,
       showUnselectedLabels: false,
     ),
-  );
+      textTheme: const TextTheme(bodyLarge: TextStyle()));
 }
