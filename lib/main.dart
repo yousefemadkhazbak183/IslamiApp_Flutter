@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:islami_app_flutter/Theme/my_theme_data.dart';
+import 'package:islami_app_flutter/home/Tabs/quran_tabs/quran_details/quran_details.dart';
 import 'package:islami_app_flutter/home/home.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,10 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: MyThemeData.lightMode,
-      initialRoute: HomeScreen.rotueName,
-
       routes: {
-        HomeScreen.rotueName : (context) => HomeScreen()
+        HomeScreen.rotueName: (context) => HomeScreen(),
+        QuranDetails.routeName: (context) => QuranDetails(),
       },
     );
   }
