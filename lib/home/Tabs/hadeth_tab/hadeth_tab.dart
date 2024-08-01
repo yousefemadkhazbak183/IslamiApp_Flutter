@@ -31,7 +31,7 @@ class _HadethTabState extends State<HadethTab> {
                   flex: 2,
                   child: ListView.separated(
                     itemBuilder: (context, index) =>
-                        HadithTitleWidget(hadithTitle: hadithList[index].title),
+                        HadithTitleWidget(hadithItem: hadithList[index]),
                     separatorBuilder: (context, index) => Container(
                       width: double.infinity,
                       height: 3,
@@ -61,8 +61,8 @@ class _HadethTabState extends State<HadethTab> {
       HadithItem hadithItem =
           HadithItem(title: hadithTitle, content: hadithContent);
       hadithList.add(hadithItem);
-      setState(() {});
     }
+    setState(() {});
   }
 }
 
