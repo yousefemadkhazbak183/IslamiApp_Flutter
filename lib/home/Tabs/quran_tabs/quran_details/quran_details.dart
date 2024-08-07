@@ -34,14 +34,12 @@ class _QuranDetailsState extends State<QuranDetails> {
                 child: CircularProgressIndicator(),
               )
             : Card(
-                color: Colors.white,
-                elevation: 6,
                 margin: EdgeInsets.symmetric(vertical: 55, horizontal: 29),
                 child: ListView.separated(
                     itemBuilder: (context, index) =>
                         VerseWidget(verse: verses[index]),
                     separatorBuilder: (context, index) => Divider(
-                          color: Color(0xFFB7935F),
+                          color: Theme.of(context).dividerColor,
                           indent: 22,
                           endIndent: 22,
                         ),

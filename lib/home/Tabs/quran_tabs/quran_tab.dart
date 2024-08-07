@@ -252,14 +252,12 @@ class QuranTab extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             AppLocalizations.of(context)!.chapter_name,
-            style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Color(0xFF242424)),
+            style: Theme.of(context).textTheme.labelMedium,
           ),
           decoration: BoxDecoration(
             border: Border.symmetric(
-                horizontal: BorderSide(color: Color(0xFFB7935F), width: 2)),
+                horizontal: BorderSide(
+                    color: Theme.of(context).dividerColor, width: 2)),
           ),
         ),
         Expanded(
@@ -274,7 +272,7 @@ class QuranTab extends StatelessWidget {
                       height: 0,
                       endIndent: 30,
                       indent: 30,
-                      color: Color(0xFFB7935F),
+                      color: Theme.of(context).dividerColor,
                     ),
                 itemCount: suraNames.length)),
       ],

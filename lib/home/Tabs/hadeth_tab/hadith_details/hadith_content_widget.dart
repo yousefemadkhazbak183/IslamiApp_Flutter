@@ -15,10 +15,9 @@ class HadithContentWidget extends StatelessWidget {
           textAlign: TextAlign.center,
           textDirection: TextDirection.rtl,
           content,
-          style: TextStyle(
-              fontSize: 23,
-              fontWeight: FontWeight.w400,
-              color: Color(0xFF242424)),
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                fontSize: 18,
+              ),
         ),
       ),
     );

@@ -34,9 +34,9 @@ class _HadethTabState extends State<HadethTab> {
                         HadithTitleWidget(hadithItem: hadithList[index]),
                     separatorBuilder: (context, index) => Container(
                       width: double.infinity,
-                      height: 3,
+                      height: 2,
                       margin: EdgeInsets.symmetric(horizontal: 26),
-                      color: Color(0xFFB7935F),
+                      color: Theme.of(context).dividerColor,
                     ),
                     itemCount: hadithList.length,
                   ),

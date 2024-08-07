@@ -18,8 +18,7 @@ class _SettingsTabsState extends State<SettingsTabs> {
         children: [
           Text(
             AppLocalizations.of(context)!.theme,
-            style: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
+            style: Theme.of(context).textTheme.labelSmall,
           ),
           InkWell(
             onTap: () {
@@ -30,21 +29,17 @@ class _SettingsTabsState extends State<SettingsTabs> {
                 margin: EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: Colors.black, width: 3),
-                ),
+                border:
+                    Border.all(color: Theme.of(context).dividerColor, width: 3),
+              ),
                 child: Text(
                   AppLocalizations.of(context)!.light,
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black),
-                )),
+                  style: Theme.of(context).textTheme.labelSmall),
+            ),
           ),
           Text(
             AppLocalizations.of(context)!.language,
-            style: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
-          ),
+              style: Theme.of(context).textTheme.labelSmall),
           InkWell(
             onTap: () {
               showLanguageBottomSheet();
@@ -54,15 +49,12 @@ class _SettingsTabsState extends State<SettingsTabs> {
                 margin: EdgeInsets.symmetric(vertical: 5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
-                  border: Border.all(color: Colors.black, width: 3),
+                  border: Border.all(
+                      color: Theme.of(context).dividerColor, width: 3),
                 ),
                 child: Text(
                   AppLocalizations.of(context)!.english,
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black),
-                )),
+                    style: Theme.of(context).textTheme.labelSmall)),
           ),
         ],
       ),
