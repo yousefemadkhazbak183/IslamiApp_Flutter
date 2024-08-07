@@ -29,7 +29,6 @@ class HadithDetailsScreen extends StatelessWidget {
               ClipRRect(
                 child: Card(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  elevation: 22,
                   child: HadithContentWidget(
                     content: hadithItem.content,
                   ),

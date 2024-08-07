@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ThemeBottom extends StatelessWidget {
+class ThemeBottom extends StatefulWidget {
   const ThemeBottom({super.key});
 
+  @override
+  State<ThemeBottom> createState() => _ThemeBottomState();
+}
+
+class _ThemeBottomState extends State<ThemeBottom> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,10 +32,13 @@ class ThemeBottom extends StatelessWidget {
       children: [
         Text(
           selected,
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              fontWeight: FontWeight.w700,
+              fontSize: 18,
+              color: Theme.of(context).colorScheme.primary),
         ),
         Icon(
+          color: Theme.of(context).colorScheme.primary,
           Icons.check,
           size: 30,
         ),
@@ -40,9 +48,6 @@ class ThemeBottom extends StatelessWidget {
 
   Widget buildUnSelectedThemeItem(String unSelected) {
     return Text(
-      unSelected,
-      style: TextStyle(
-          fontWeight: FontWeight.w700, fontSize: 20, color: Colors.black),
-    );
+      unSelected, style: Theme.of(context).textTheme.labelSmall);
   }
 }
