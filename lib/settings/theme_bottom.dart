@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app_flutter/providers/settings_providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class ThemeBottom extends StatefulWidget {
   const ThemeBottom({super.key});
@@ -11,16 +13,32 @@ class ThemeBottom extends StatefulWidget {
 class _ThemeBottomState extends State<ThemeBottom> {
   @override
   Widget build(BuildContext context) {
+    SettingsProvider myProvider = Provider.of<SettingsProvider>(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          buildSelectedThemeItem(AppLocalizations.of(context)!.dark),
+          InkWell(
+              onTap: () {
+                myProvider.changeThemeMode(ThemeMode.light);
+              },
+              child: myProvider.currentTheme == ThemeMode.light
+                  ? buildSelectedThemeItem(AppLocalizations.of(context)!.light)
+                  : buildUnSelectedThemeItem(
+                      AppLocalizations.of(context)!.light)),
           SizedBox(
             height: 6,
           ),
-          buildUnSelectedThemeItem(AppLocalizations.of(context)!.light),
+          InkWell(
+              onTap: () {
+                myProvider.changeThemeMode(ThemeMode.dark);
+              },
+              child: myProvider.currentTheme == ThemeMode.dark
+                  ? buildSelectedThemeItem(AppLocalizations.of(context)!.dark)
+                  : buildUnSelectedThemeItem(
+                      AppLocalizations.of(context)!.dark)),
         ],
       ),
     );

@@ -8,6 +8,8 @@ class DarkTheme {
   static final ThemeData darkMode = ThemeData(
     primaryColor: darkColor,
     appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(color: Colors.white),
+      backgroundColor: Colors.transparent,
       elevation: 0,
       titleTextStyle: TextStyle(
         color: Colors.white,

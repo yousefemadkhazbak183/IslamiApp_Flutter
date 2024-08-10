@@ -5,8 +5,10 @@ import 'package:islami_app_flutter/home/Tabs/hadeth_tab/hadeth_tab.dart';
 import 'package:islami_app_flutter/home/Tabs/quran_tabs/quran_tab.dart';
 import 'package:islami_app_flutter/home/Tabs/radio_tabs/radio_tab.dart';
 import 'package:islami_app_flutter/home/Tabs/sebha_tabs/sebha_tab.dart';
+import 'package:islami_app_flutter/providers/settings_providers/settings_provider.dart';
 import 'package:islami_app_flutter/settings/settings_tabs.dart';
 import 'package:islami_app_flutter/utils/image_path.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String rotueName = '/';
@@ -20,10 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage(imagePathByName(imageName: 'background_light.png')),
+        image: AssetImage(
+            imagePathByName(imageName: provider.getBackgroundImageName())),
         fit: BoxFit.fill,
       )),
       child: Scaffold(
