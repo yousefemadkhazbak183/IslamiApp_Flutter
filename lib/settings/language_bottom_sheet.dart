@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app_flutter/providers/settings_providers/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
   const LanguageBottomSheet({super.key});
@@ -11,16 +13,33 @@ class LanguageBottomSheet extends StatefulWidget {
 class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          buildSelectedLanguageItem(AppLocalizations.of(context)!.english),
+          InkWell(
+              onTap: () {
+                provider.changeLanguage('en');
+              },
+              child: provider.currentLanguage == 'en'
+                  ? buildSelectedLanguageItem(
+                      AppLocalizations.of(context)!.english)
+                  : buildUnSelectedLanguageItem(
+                      AppLocalizations.of(context)!.english)),
           SizedBox(
             height: 6,
           ),
-          buildUnSelectedLanguageItem(AppLocalizations.of(context)!.arabic),
+          InkWell(
+              onTap: () {
+                provider.changeLanguage('ar');
+              },
+              child: provider.currentLanguage == 'ar'
+                  ? buildSelectedLanguageItem(
+                      AppLocalizations.of(context)!.arabic)
+                  : buildUnSelectedLanguageItem(
+                      AppLocalizations.of(context)!.arabic)),
         ],
       ),
     );

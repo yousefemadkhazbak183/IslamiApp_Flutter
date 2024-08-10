@@ -9,6 +9,7 @@ class MyThemeData {
   static final ThemeData lightMode = ThemeData(
     primaryColor: goldColor,
     appBarTheme: const AppBarTheme(
+      iconTheme: IconThemeData(color: Colors.black),
       elevation: 0,
       titleTextStyle: TextStyle(
         color: Colors.black,

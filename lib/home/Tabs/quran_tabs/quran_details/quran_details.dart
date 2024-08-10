@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app_flutter/home/Tabs/quran_tabs/quran_details/verse_widget.dart';
 import 'package:islami_app_flutter/home/Tabs/quran_tabs/sura_title_widget.dart';
+import 'package:islami_app_flutter/providers/settings_providers/settings_provider.dart';
 import 'package:islami_app_flutter/utils/image_path.dart';
+import 'package:provider/provider.dart';
 
 class QuranDetails extends StatefulWidget {
   static const String routeName = '/QuranDetails';
@@ -16,13 +18,15 @@ class _QuranDetailsState extends State<QuranDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     ArgumentSura argumentSura =
         ModalRoute.of(context)?.settings.arguments as ArgumentSura;
     if (verses.isEmpty) loadFile(argumentSura.index);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage(imagePathByName(imageName: 'background_light.png')),
+        image: AssetImage(
+            imagePathByName(imageName: provider.getBackgroundImageName())),
         fit: BoxFit.fill,
       )),
       child: Scaffold(
