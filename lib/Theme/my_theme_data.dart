@@ -65,6 +65,15 @@ class MyThemeData {
         fontWeight: FontWeight.w700,
         color: Colors.black,
       ),
+        titleSmall: TextStyle(
+            fontSize: 25, color: Colors.white, fontWeight: FontWeight.w500)),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: goldColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(33),
+        ),
+      ),
     ),
   );
 }

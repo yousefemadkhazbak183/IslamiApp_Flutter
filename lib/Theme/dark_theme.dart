@@ -63,6 +63,11 @@ class DarkTheme {
         fontWeight: FontWeight.w700,
         color: Colors.white,
       ),
-    ),
-  );
+          titleSmall: TextStyle(
+              fontWeight: FontWeight.w600, fontSize: 25, color: Colors.black)),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: yellowColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(33)))));
 }
