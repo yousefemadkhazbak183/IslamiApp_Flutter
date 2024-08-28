@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islami_app_flutter/providers/settings_providers/settings_provider.dart';
 import 'package:islami_app_flutter/settings/language_bottom_sheet.dart';
 import 'package:islami_app_flutter/settings/theme_bottom.dart';
 
@@ -22,7 +23,7 @@ class _SettingsTabsState extends State<SettingsTabs> {
           ),
           InkWell(
             onTap: () {
-              showThemeBottomSheet();
+              showThemeBottomSheet(SettingsProvider());
             },
             child: Container(
                 padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6),
@@ -42,7 +43,7 @@ class _SettingsTabsState extends State<SettingsTabs> {
               style: Theme.of(context).textTheme.labelSmall),
           InkWell(
             onTap: () {
-              showLanguageBottomSheet();
+              showLanguageBottomSheet(SettingsProvider());
             },
             child: Container(
                 padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6),
@@ -61,12 +62,12 @@ class _SettingsTabsState extends State<SettingsTabs> {
     );
   }
 
-  void showLanguageBottomSheet() {
+  void showLanguageBottomSheet(SettingsProvider provider) {
     showModalBottomSheet(
         context: context, builder: (context) => LanguageBottomSheet());
   }
 
-  void showThemeBottomSheet() {
+  void showThemeBottomSheet(SettingsProvider provider) {
     showModalBottomSheet(context: context, builder: (context) => ThemeBottom());
   }
 }

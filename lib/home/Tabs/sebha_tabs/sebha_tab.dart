@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app_flutter/providers/settings_providers/settings_provider.dart';
 import 'package:islami_app_flutter/utils/image_path.dart';
+import 'package:provider/provider.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -16,6 +18,8 @@ class _SebhaTabState extends State<SebhaTab> {
   static const List<String> azkar = ['سبحان الله', 'الحمد لله', 'الله اكبر'];
   @override
   Widget build(BuildContext context) {
+    SettingsProvider myProvider = Provider.of<SettingsProvider>(context);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -27,8 +31,9 @@ class _SebhaTabState extends State<SebhaTab> {
               Padding(
                 padding: EdgeInsets.only(
                     left: MediaQuery.of(context).size.height * 0.17),
-                child:
-                    Image.asset(imagePathByName(imageName: 'sebha_head.png')),
+                child: Image.asset(myProvider.themeMode == ThemeMode.light
+                    ? imagePathByName(imageName: 'sebha_head.png')
+                    : imagePathByName(imageName: 'head_of_sebha_dark.png')),
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -37,8 +42,10 @@ class _SebhaTabState extends State<SebhaTab> {
                 child: AnimatedRotation(
                     duration: Duration(milliseconds: 250),
                     turns: turn,
-                    child: Image.asset(
-                        imagePathByName(imageName: 'sebha_body.png'))),
+                  child: Image.asset(myProvider.themeMode == ThemeMode.light
+                      ? imagePathByName(imageName: 'sebha_body.png')
+                      : imagePathByName(imageName: 'sebha_body_dark.png')),
+                ),
               ),
             ],
           ),

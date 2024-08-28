@@ -10,6 +10,7 @@ class MyThemeData {
     primaryColor: goldColor,
     appBarTheme: const AppBarTheme(
       iconTheme: IconThemeData(color: Colors.black),
+      backgroundColor: Colors.transparent,
       elevation: 0,
       titleTextStyle: TextStyle(
         color: Colors.black,
@@ -49,22 +50,22 @@ class MyThemeData {
         )),
     dividerColor: goldColor,
     textTheme: const TextTheme(
-      labelMedium: TextStyle(
-          fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
-      titleMedium: TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-      ),
-      bodySmall: TextStyle(
-        fontSize: 20,
-        color: Colors.black,
-      ),
-      labelSmall: TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
-        color: Colors.black,
-      ),
+        labelMedium: TextStyle(
+            fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
+        titleMedium: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+        bodySmall: TextStyle(
+          fontSize: 20,
+          color: Colors.black,
+        ),
+        labelSmall: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          color: Colors.black,
+        ),
         titleSmall: TextStyle(
             fontSize: 25, color: Colors.white, fontWeight: FontWeight.w500)),
     elevatedButtonTheme: ElevatedButtonThemeData(

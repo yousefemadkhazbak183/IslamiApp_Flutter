@@ -21,21 +21,21 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
               onTap: () {
-                provider.changeLanguage('en');
+                provider.changeLocal('en');
               },
-              child: provider.currentLanguage == 'en'
+              child: provider == 'en'
                   ? buildSelectedLanguageItem(
                       AppLocalizations.of(context)!.english)
                   : buildUnSelectedLanguageItem(
                       AppLocalizations.of(context)!.english)),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           InkWell(
               onTap: () {
-                provider.changeLanguage('ar');
+                provider.changeLocal('ar');
               },
-              child: provider.currentLanguage == 'ar'
+              child: provider == 'ar'
                   ? buildSelectedLanguageItem(
                       AppLocalizations.of(context)!.arabic)
                   : buildUnSelectedLanguageItem(

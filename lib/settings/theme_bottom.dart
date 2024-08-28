@@ -22,20 +22,20 @@ class _ThemeBottomState extends State<ThemeBottom> {
         children: [
           InkWell(
               onTap: () {
-                myProvider.changeThemeMode(ThemeMode.light);
+                myProvider.changeTheme(ThemeMode.light);
               },
-              child: myProvider.currentTheme == ThemeMode.light
+              child: myProvider.themeMode == ThemeMode.light
                   ? buildSelectedThemeItem(AppLocalizations.of(context)!.light)
                   : buildUnSelectedThemeItem(
                       AppLocalizations.of(context)!.light)),
-          SizedBox(
+          const SizedBox(
             height: 6,
           ),
           InkWell(
               onTap: () {
-                myProvider.changeThemeMode(ThemeMode.dark);
+                myProvider.changeTheme(ThemeMode.dark);
               },
-              child: myProvider.currentTheme == ThemeMode.dark
+              child: myProvider.themeMode == ThemeMode.dark
                   ? buildSelectedThemeItem(AppLocalizations.of(context)!.dark)
                   : buildUnSelectedThemeItem(
                       AppLocalizations.of(context)!.dark)),

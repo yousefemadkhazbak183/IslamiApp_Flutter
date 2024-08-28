@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('ar'), // Arabic
       ],
-      locale: Locale(provider.currentLanguage),
+      locale: provider.locale,
       theme: MyThemeData.lightMode,
       darkTheme: DarkTheme.darkMode,
-      themeMode: provider.currentTheme,
+      themeMode: provider.themeMode,
       routes: {
         HomeScreen.rotueName: (context) => HomeScreen(),
         QuranDetails.routeName: (context) => QuranDetails(),
@@ -37,5 +37,8 @@ class MyApp extends StatelessWidget {
 
 void main(){
   runApp(ChangeNotifierProvider(
-      create: (context) => SettingsProvider(), child: MyApp()));
+      create: (context) => SettingsProvider()
+        ..getTheme()
+        ..getLanguage(),
+      child: MyApp()));
 }

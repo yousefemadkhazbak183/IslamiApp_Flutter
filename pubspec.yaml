@@ -41,6 +41,10 @@ dependencies:
   intl: any
   provider: ^6.1.2
 
+  # Shared preference
+  shared_preferences: ^2.3.2
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
